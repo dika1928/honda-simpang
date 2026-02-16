@@ -2,15 +2,17 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/img"
-public_folder: "/assets/img"
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "promo"
-    label: "Promo"
-    folder: "data/promo"
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - { label: "Judul", name: "title", widget: "string" }
-      - { label: "Deskripsi", name: "body", widget: "text" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
